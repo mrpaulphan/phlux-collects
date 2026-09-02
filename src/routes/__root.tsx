@@ -31,6 +31,20 @@ export const Route = createRootRoute({
           ),
       },
     ],
+    scripts: [
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-WJ805SGN71',
+        async: true,
+      },
+      {
+        children: [
+          'window.dataLayer = window.dataLayer || [];',
+          'function gtag(){dataLayer.push(arguments);}',
+          "gtag('js', new Date());",
+          "gtag('config', 'G-WJ805SGN71');",
+        ].join('\n'),
+      },
+    ],
   }),
   shellComponent: RootDocument,
 })
