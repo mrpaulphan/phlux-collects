@@ -79,16 +79,16 @@ function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className={
-              'group flex items-center gap-3.5 rounded-2xl border px-[18px] py-4 text-base font-semibold transition active:scale-[0.99] ' +
+              'group flex items-center gap-3.5 rounded-2xl border px-[18px] py-4 text-base font-semibold shadow-sm transition active:scale-[0.99] ' +
               (link.primary
-                ? 'border-transparent bg-gradient-to-br from-gold to-gold-soft text-[#1a1400]'
+                ? 'border-transparent bg-gradient-to-br from-gold-bright to-gold-soft text-[#241a00] hover:brightness-[1.03]'
                 : 'border-edge bg-card text-ink hover:border-gold hover:bg-card-hover')
             }
           >
             <span
               className={
                 'flex h-6 w-6 shrink-0 items-center justify-center [&_svg]:h-full [&_svg]:w-full [&_svg]:fill-current ' +
-                (link.primary ? 'text-[#1a1400]' : 'text-gold')
+                (link.primary ? 'text-[#241a00]' : 'text-gold')
               }
             >
               {link.icon}
@@ -97,7 +97,7 @@ function Home() {
             <span
               className={
                 'text-lg leading-none ' +
-                (link.primary ? 'text-[#1a1400]' : 'text-muted')
+                (link.primary ? 'text-[#241a00]' : 'text-muted')
               }
             >
               &rsaquo;

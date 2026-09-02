@@ -18,18 +18,11 @@ export const Route = createRootRoute({
       { property: 'og:title', content: SITE_TITLE },
       { property: 'og:description', content: SITE_DESCRIPTION },
       { property: 'og:type', content: 'website' },
-      { name: 'theme-color', content: '#0a0a0a' },
+      { name: 'theme-color', content: '#ffffff' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
-      {
-        rel: 'icon',
-        href:
-          'data:image/svg+xml,' +
-          encodeURIComponent(
-            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%230a0a0a"/><text x="16" y="22" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="%23e0b13a">P</text></svg>',
-          ),
-      },
+      { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
     ],
     scripts: [
       {
