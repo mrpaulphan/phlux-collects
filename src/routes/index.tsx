@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Fragment } from 'react'
 import type { ReactNode } from 'react'
 
 export const Route = createFileRoute('/')({ component: Home })
@@ -139,8 +138,24 @@ function Home() {
         Trading Card Games &middot; Breaks &middot; Singles
       </p>
 
-      <nav className="mt-9 flex w-full flex-col gap-3.5">
-        {rows.map((link, i) => {
+      <div className="mt-8 flex flex-wrap justify-center gap-3">
+        {socials.map((s) => (
+          <a
+            key={s.label}
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={s.label}
+            title={s.label}
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-edge bg-card text-gold shadow-sm transition hover:border-gold hover:bg-card-hover [&_svg]:h-5 [&_svg]:w-5 [&_svg]:fill-current"
+          >
+            {s.icon}
+          </a>
+        ))}
+      </div>
+
+      <nav className="mt-5 flex w-full flex-col gap-3.5">
+        {rows.map((link) => {
           const external = link.href.startsWith('http')
           const row = (
             <a
@@ -180,28 +195,7 @@ function Home() {
               </span>
             </a>
           )
-          // Social icon row sits right after the primary (first) row.
-          if (i !== 1) return row
-          return (
-            <Fragment key={link.label}>
-              <div className="flex flex-wrap justify-center gap-3">
-                {socials.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    title={s.label}
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-edge bg-card text-gold shadow-sm transition hover:border-gold hover:bg-card-hover [&_svg]:h-5 [&_svg]:w-5 [&_svg]:fill-current"
-                  >
-                    {s.icon}
-                  </a>
-                ))}
-              </div>
-              {row}
-            </Fragment>
-          )
+          return row
         })}
       </nav>
 
