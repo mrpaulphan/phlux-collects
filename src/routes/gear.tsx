@@ -15,6 +15,36 @@ const GEAR: Array<GearItem> = [
     href: 'https://a.co/d/08koB7d2',
     image: 'https://m.media-amazon.com/images/I/61D0UvHQdOL._AC_SL1500_.jpg',
   },
+  {
+    name: 'Card Saver 1 — Semi-Rigid Holders (200ct)',
+    href: 'https://amzn.to/4hdLt0v',
+    image: 'https://m.media-amazon.com/images/I/61+9PJNvZ6L._AC_SL1500_.jpg',
+  },
+  {
+    name: 'Team Bags — Toploader/Magnetic (500ct)',
+    href: 'https://amzn.to/3UWknDk',
+    image: 'https://m.media-amazon.com/images/I/612PelIl+AL._AC_SL1500_.jpg',
+  },
+  {
+    name: 'Team Bags — Slabs & Card Savers (200ct)',
+    href: 'https://amzn.to/466CBoe',
+    image: 'https://m.media-amazon.com/images/I/71vRWZR+PZL._AC_SL1500_.jpg',
+  },
+  {
+    name: 'Bubble Mailers 4x8in (50ct)',
+    href: 'https://amzn.to/4cuY9ym',
+    image: 'https://m.media-amazon.com/images/I/71Apw3qBEWL._AC_SL1500_.jpg',
+  },
+  {
+    name: 'Shipping Protectors 3.5x4.5in (120ct)',
+    href: 'https://amzn.to/4cvMak9',
+    image: 'https://m.media-amazon.com/images/I/71tLlh+YHnL._AC_SL1500_.jpg',
+  },
+  {
+    name: 'A6 Envelopes (120ct)',
+    href: 'https://amzn.to/4zVl7sx',
+    image: 'https://m.media-amazon.com/images/I/51BLTWmpkcL._AC_SL1200_.jpg',
+  },
 ]
 
 function Gear() {
