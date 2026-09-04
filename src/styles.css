@@ -12,12 +12,28 @@
   --color-gold-soft: #f6d67f;
 }
 
+:root[data-theme="dark"] {
+  --color-bg: #0a0a0a;
+  --color-card: #151515;
+  --color-card-hover: #1f1f1f;
+  --color-edge: #2a2a2a;
+  --color-ink: #f4f4f4;
+  --color-muted: #9a9a9a;
+  --color-gold: #e0b13a;
+  --color-gold-bright: #e0b13a;
+  --color-gold-soft: #f0d488;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
   color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 html,
@@ -34,4 +50,25 @@ body {
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif;
   -webkit-text-size-adjust: 100%;
+}
+
+/* Logo swap: pick the variant matching the active theme, no JS needed. */
+.logo-dark {
+  display: none;
+}
+:root[data-theme="dark"] .logo-light {
+  display: none;
+}
+:root[data-theme="dark"] .logo-dark {
+  display: block;
+}
+
+.theme-icon-moon {
+  display: none;
+}
+:root[data-theme="dark"] .theme-icon-sun {
+  display: none;
+}
+:root[data-theme="dark"] .theme-icon-moon {
+  display: block;
 }

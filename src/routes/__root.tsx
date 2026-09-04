@@ -26,6 +26,11 @@ export const Route = createRootRoute({
     ],
     scripts: [
       {
+        // Set data-theme before paint so there's no flash of the wrong theme.
+        children:
+          "(function(){try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}})();",
+      },
+      {
         src: 'https://www.googletagmanager.com/gtag/js?id=G-WJ805SGN71',
         async: true,
       },
