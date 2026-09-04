@@ -8,6 +8,7 @@ type LinkItem = {
   href: string
   icon: ReactNode
   primary?: boolean
+  sponsored?: boolean
 }
 
 // Edit this list to update the site. `primary: true` gives the gold button.
@@ -58,6 +59,25 @@ const LINKS: Array<LinkItem> = [
       </svg>
     ),
   },
+  {
+    label: 'Misprint',
+    href: 'https://www.misprint.com/why-misprint?ref=phluxcollects',
+    sponsored: true,
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21.4 11.6 12.4 2.6c-.4-.4-.9-.6-1.4-.6H4a2 2 0 0 0-2 2v7c0 .5.2 1 .6 1.4l9 9a2 2 0 0 0 2.8 0l7-7a2 2 0 0 0 0-2.8zM6.5 8A1.5 1.5 0 1 1 6.5 5a1.5 1.5 0 0 1 0 3z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'My Gear',
+    href: '/gear',
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm2 0v12h12V6H6zm2 2h3v3H8V8zm5 0h3v3h-3V8zM8 13h3v3H8v-3zm5 0h3v3h-3v-3z" />
+      </svg>
+    ),
+  },
 ]
 
 function Home() {
@@ -72,12 +92,20 @@ function Home() {
       </p>
 
       <nav className="mt-9 flex w-full flex-col gap-3.5">
-        {LINKS.map((link) => (
+        {LINKS.map((link) => {
+          const external = link.href.startsWith('http')
+          return (
           <a
             key={link.label}
             href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={external ? '_blank' : undefined}
+            rel={
+              external
+                ? link.sponsored
+                  ? 'sponsored noopener noreferrer'
+                  : 'noopener noreferrer'
+                : undefined
+            }
             className={
               'group flex items-center gap-3.5 rounded-2xl border px-[18px] py-4 text-base font-semibold shadow-sm transition active:scale-[0.99] ' +
               (link.primary
@@ -103,7 +131,8 @@ function Home() {
               &rsaquo;
             </span>
           </a>
-        ))}
+          )
+        })}
       </nav>
 
       <footer className="mt-10 text-xs tracking-[0.04em] text-muted">
