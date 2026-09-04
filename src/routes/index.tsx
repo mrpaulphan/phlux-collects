@@ -60,7 +60,7 @@ const LINKS: Array<LinkItem> = [
     ),
   },
   {
-    label: 'Misprint',
+    label: 'Sign up for Misprint — Lowest Seller Fees',
     href: 'https://www.misprint.com/why-misprint?ref=phluxcollects',
     sponsored: true,
     icon: (
