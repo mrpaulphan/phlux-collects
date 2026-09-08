@@ -15,7 +15,7 @@ type LinkItem = {
 // Edit this list to update the site. `primary: true` gives the gold button.
 const LINKS: Array<LinkItem> = [
   {
-    label: 'Shop my eBay Store',
+    label: 'Shop my eBay Store — code ONETIME10 for 10% off',
     href: 'https://www.ebay.com/str/mrvaultz',
     primary: true,
     icon: (
